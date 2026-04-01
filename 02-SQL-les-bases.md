@@ -45,6 +45,7 @@ Cela retourne uniquement les colonnes `Nom` et `Prenom` de la table `Employes`.
 ## Exemple 3 : Ajouter une condition avec WHERE
 
 Vous pouvez filtrer les résultats avec une clause `WHERE` :
+Une clause where permet de filtrer les résultats en fonction de conditions spécifiques. Par exemple, pour afficher uniquement les employés du département "Informatique" :
 
 ```sql
 SELECT Nom, Prenom 
@@ -59,7 +60,8 @@ Cela retourne les employés du département "Informatique".
 ## Exemple 4 : Trier les résultats avec ORDER BY
 
 Pour trier les résultats, utilisez `ORDER BY` :
-
+La clause `ORDER BY` permet de trier les résultats selon une ou plusieurs colonnes. Par exemple, pour trier les employés par salaire décroissant :
+dans le cas de plusiers colonne, on peut faire : ORDER BY Salaire DESC, Nom ASC.
 ```sql
 SELECT Nom, Prenom, Salaire 
 FROM Employes
@@ -137,6 +139,28 @@ Voici un ensemble de tables représentant une base de données pour une entrepri
 ---
 
 ### Questions
+questions de 1 à 10, avec des requêtes SQL à écrire pour chaque question.
+1. Afficher tous les employés du département "Informatique".
+2. Lister les projets ayant un budget supérieur à 10 000.   
+3. Afficher les employés embauchés après le 1er janvier 2020.
+4. Lister les projets du département "Marketing".
+5. Afficher les employés ayant un salaire supérieur ou égal à 3500.
+6. Lister les projets avec un budget compris entre 5 000 et 15 000.
+7. Afficher les employés dont le prénom commence par "S".
+8. Lister les projets dont le nom contient le mot "Réseau".
+9. Afficher les employés qui ne sont pas dans le département "RH".
+10. Lister les projets ayant un budget inférieur à 20 000.
+
+
+
+
+
+
+
+
+
+
+
 
 ### Requêtes SQL
 
