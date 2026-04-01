@@ -15,6 +15,71 @@ Vous travaillez pour une entreprise de commerce en ligne. La base de données co
 - **Details_Commandes** : Détails des produits dans chaque commande.
   - `id_commande`, `id_produit`, `quantite`, `prix_unitaire`
 
+
+
+## Données exemple
+
+### Table Produits
+
+| id_produit | nom | categorie | prix | stock |
+|---|---|---|---|---|
+| 1 | Laptop Dell | Électronique | 899.99 | 15 |
+| 2 | Souris Logitech | Électronique | 29.99 | 50 |
+| 3 | Chaise Bureau | Mobilier | 199.99 | 8 |
+| 4 | Clavier Mécanique | Électronique | 149.99 | 25 |
+| 5 | Moniteur LG 27" | Électronique | 349.99 | 12 |
+| 6 | Bureau Bois | Mobilier | 459.99 | 5 |
+| 7 | Lampe LED | Accessoires | 39.99 | 40 |
+| 8 | Webcam HD | Électronique | 79.99 | 0 |
+| 9 | Casque Audio | Électronique | 119.99 | 22 |
+| 10 | Tapis Souris | Accessoires | 14.99 | 100 |
+
+### Table Clients
+
+| id_client | nom | email | ville | pays |
+|---|---|---|---|---|
+| 1 | Jean Dupont | jean.dupont@mail.com | Paris | France |
+| 2 | Marie Martin | marie.martin@mail.com | Lyon | France |
+| 3 | Pierre Bernard | pierre.bernard@mail.com | Marseille | France |
+| 4 | Sophie Laurent | sophie.laurent@mail.com | Toulouse | France |
+| 5 | Luc Moreau | luc.moreau@mail.com | Amsterdam | Pays-Bas |
+| 6 | Isabelle Dubois | isabelle.dubois@mail.com | Bruxelles | Belgique |
+| 7 | Marc Petit | marc.petit@mail.com | Genève | Suisse |
+| 8 | Claudine Nicolas | claudine.nicolas@mail.com | Berlin | Allemagne |
+| 9 | Robert Lefevre | robert.lefevre@mail.com | Madrid | Espagne |
+| 10 | Véronique Girard | veronique.girard@mail.com | Bordeaux | France |
+
+### Table Commandes
+
+| id_commande | id_client | date_commande | montant_total |
+|---|---|---|---|
+| 1 | 1 | 2023-01-15 | 1259.96 |
+| 2 | 2 | 2023-02-20 | 449.97 |
+| 3 | 1 | 2023-03-10 | 299.99 |
+| 4 | 3 | 2023-04-05 | 879.98 |
+| 5 | 4 | 2023-05-12 | 159.98 |
+| 6 | 5 | 2023-06-18 | 569.96 |
+| 7 | 2 | 2023-07-22 | 199.99 |
+| 8 | 6 | 2023-08-30 | 1019.95 |
+| 9 | 7 | 2023-09-14 | 349.99 |
+| 10 | 1 | 2023-10-25 | 689.97 |
+
+### Table Details_Commandes
+
+| id_commande | id_produit | quantite | prix_unitaire |
+|---|---|---|---|
+| 1 | 1 | 1 | 899.99 |
+| 1 | 2 | 1 | 29.99 |
+| 1 | 7 | 8 | 39.99 |
+| 2 | 3 | 2 | 199.99 |
+| 2 | 7 | 1 | 39.99 |
+| 3 | 5 | 1 | 349.99 |
+| 4 | 1 | 1 | 899.99 |
+| 5 | 4 | 1 | 149.99 |
+| 6 | 3 | 2 | 199.99 |
+| 10 | 9 | 2 | 119.99 |
+
+
 ### Exercices
 
 #### Niveau 1 : Requêtes simples
@@ -82,210 +147,3 @@ Vous travaillez pour une entreprise de commerce en ligne. La base de données co
 40. Listez les produits dont le stock est inférieur à la quantité totale commandée.
 
 Bonne chance avec ces exercices ! Assurez-vous de bien comprendre les relations entre les tables avant de commencer.
-
-<!-- ********************************************************************************* -->
-<!-- ************************************** REPONSES ********************************* -->
-<!-- ********************************************************************************* -->
-
-### Réponses aux exercices SQL
-
-#### Niveau 1 : Requêtes simples
-
-1. ```sql
-   SELECT * FROM Produits;
-   ```
-2. ```sql
-   SELECT nom, email FROM Clients;
-   ```
-3. ```sql
-   SELECT * FROM Commandes WHERE date_commande > '2023-01-01';
-   ```
-4. ```sql
-   SELECT * FROM Produits WHERE prix > 50;
-   ```
-5. ```sql
-   SELECT * FROM Clients WHERE pays = 'France';
-   ```
-
-#### Niveau 2 : Utilisation de filtres et tris
-
-6. ```sql
-   SELECT * FROM Produits ORDER BY prix ASC;
-   ```
-7. ```sql
-   SELECT * FROM Clients ORDER BY nom ASC;
-   ```
-8. ```sql
-   SELECT * FROM Commandes WHERE montant_total BETWEEN 100 AND 500;
-   ```
-9. ```sql
-   SELECT * FROM Produits WHERE stock = 0;
-   ```
-10. ```sql
-     SELECT * FROM Produits ORDER BY prix DESC LIMIT 5;
-    ```
-
-#### Niveau 3 : Fonctions d'agrégation
-
-11. ```sql
-     SELECT COUNT(*) AS total_produits FROM Produits;
-    ```
-12. ```sql
-     SELECT AVG(prix) AS prix_moyen FROM Produits;
-    ```
-13. ```sql
-     SELECT COUNT(*) AS total_commandes FROM Commandes;
-    ```
-14. ```sql
-     SELECT SUM(montant_total) AS total_2022 FROM Commandes WHERE YEAR(date_commande) = 2022;
-    ```
-15. ```sql
-     SELECT pays, COUNT(*) AS nombre_clients FROM Clients GROUP BY pays;
-    ```
-
-#### Niveau 4 : Groupes et sous-totaux
-
-16. ```sql
-     SELECT categorie, COUNT(*) AS nombre_produits FROM Produits GROUP BY categorie;
-    ```
-17. ```sql
-     SELECT id_client, SUM(montant_total) AS total_commandes FROM Commandes GROUP BY id_client;
-    ```
-18. ```sql
-     SELECT categorie, SUM(stock) AS stock_total FROM Produits GROUP BY categorie;
-    ```
-19. ```sql
-     SELECT MONTH(date_commande) AS mois, AVG(montant_total) AS moyenne_montant FROM Commandes GROUP BY mois;
-    ```
-20. ```sql
-     SELECT ville, COUNT(*) AS nombre_clients FROM Clients GROUP BY ville;
-    ```
-
-#### Niveau 5 : Requêtes avec jointures
-
-21. ```sql
-     SELECT dc.id_commande, p.nom, dc.prix_unitaire
-     FROM Details_Commandes dc
-     JOIN Produits p ON dc.id_produit = p.id_produit;
-    ```
-22. ```sql
-     SELECT c.id_commande, cl.nom, c.montant_total
-     FROM Commandes c
-     JOIN Clients cl ON c.id_client = cl.id_client;
-    ```
-23. ```sql
-     SELECT cl.nom AS client, p.nom AS produit
-     FROM Commandes c
-     JOIN Details_Commandes dc ON c.id_commande = dc.id_commande
-     JOIN Produits p ON dc.id_produit = p.id_produit
-     JOIN Clients cl ON c.id_client = cl.id_client;
-    ```
-24. ```sql
-     SELECT DISTINCT cl.nom
-     FROM Commandes c
-     JOIN Details_Commandes dc ON c.id_commande = dc.id_commande
-     JOIN Produits p ON dc.id_produit = p.id_produit
-     JOIN Clients cl ON c.id_client = cl.id_client
-     WHERE p.categorie = 'Électronique';
-    ```
-25. ```sql
-     SELECT c.id_commande, cl.nom, c.date_commande
-     FROM Commandes c
-     JOIN Clients cl ON c.id_client = cl.id_client;
-    ```
-
-#### Niveau 6 : Requêtes avancées
-
-26. ```sql
-     SELECT * FROM Clients
-     WHERE id_client NOT IN (SELECT id_client FROM Commandes);
-    ```
-27. ```sql
-     SELECT * FROM Produits
-     WHERE id_produit NOT IN (SELECT id_produit FROM Details_Commandes);
-    ```
-28. ```sql
-     SELECT id_client, COUNT(*) AS nombre_commandes
-     FROM Commandes
-     GROUP BY id_client
-     HAVING nombre_commandes > 5;
-    ```
-29. ```sql
-     SELECT id_produit, SUM(quantite) AS total_commande
-     FROM Details_Commandes
-     GROUP BY id_produit
-     ORDER BY total_commande DESC;
-    ```
-30. ```sql
-     SELECT id_client, SUM(montant_total) AS total_depense
-     FROM Commandes
-     GROUP BY id_client
-     HAVING total_depense > 1000;
-    ```
-
-#### Niveau 7 : Sous-requêtes
-
-31. ```sql
-     SELECT * FROM Produits
-     WHERE prix > (SELECT AVG(prix) FROM Produits);
-    ```
-32. ```sql
-     SELECT id_client
-     FROM Commandes
-     WHERE montant_total > (SELECT AVG(montant_total) FROM Commandes);
-    ```
-33. ```sql
-     SELECT id_produit
-     FROM Details_Commandes
-     GROUP BY id_produit
-     HAVING COUNT(DISTINCT id_client) = 1;
-    ```
-34. ```sql
-     SELECT id_commande
-     FROM Details_Commandes
-     GROUP BY id_commande
-     HAVING COUNT(DISTINCT id_produit) > 3;
-    ```
-35. ```sql
-     SELECT id_client
-     FROM Details_Commandes dc
-     JOIN Produits p ON dc.id_produit = p.id_produit
-     GROUP BY id_client, p.categorie
-     HAVING COUNT(DISTINCT p.id_produit) = (SELECT COUNT(*) FROM Produits WHERE categorie = p.categorie);
-    ```
-
-#### Niveau 8 : Requêtes complexes
-
-36. ```sql
-     SELECT id_client, SUM(montant_total) AS total_depense
-     FROM Commandes
-     GROUP BY id_client
-     ORDER BY total_depense DESC
-     LIMIT 3;
-    ```
-37. ```sql
-     SELECT id_produit, SUM(quantite) AS total_commande
-     FROM Details_Commandes
-     GROUP BY id_produit
-     ORDER BY total_commande ASC
-     LIMIT 5;
-    ```
-38. ```sql
-     SELECT c.id_commande, c.montant_total, COUNT(dc.id_produit) AS nombre_produits
-     FROM Commandes c
-     JOIN Details_Commandes dc ON c.id_commande = dc.id_commande
-     GROUP BY c.id_commande;
-    ```
-39. ```sql
-     SELECT id_client
-     FROM Commandes
-     GROUP BY id_client
-     HAVING COUNT(DISTINCT MONTH(date_commande)) >= 3;
-    ```
-40. ```sql
-     SELECT p.id_produit, p.stock, SUM(dc.quantite) AS total_commande
-     FROM Produits p
-     JOIN Details_Commandes dc ON p.id_produit = dc.id_produit
-     GROUP BY p.id_produit
-     HAVING p.stock < total_commande;
-    ```
