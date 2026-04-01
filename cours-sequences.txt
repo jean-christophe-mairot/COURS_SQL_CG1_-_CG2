@@ -1,0 +1,22 @@
+ EXERCICE https://www.bonbache.fr/tables-de-base-de-donnees-access-exercice-debutant-403.html
+
+1 - COMPRENDRE les bases de données
+	- IDENTIFIER les différents éléments d'une bdd
+	- COMPRENDRE une table : identifier les éléments d'une table (id, clef primaire, enregistrement, champs)
+	- APPRENDRE à nommer les éléments de sa base de données
+	- COMPRENDRE et MANIPULER les bases de données ACCESS (fichier clients-et-commandes.accdb)
+2 - UTILISER les outils d'ACCESS pour modifier une table dans clients 
+
+COURS :
+Autre tuto création de la base de donnée et gestion COURS :
+https://www.youtube.com/watch?v=4FXcl0hmn40&list=PLpQBnWleLAas1yqMbmVGJl1WHX-z-jhQs
+
+
+
+
+suivi pedagogique EXERCICES :
+// manipulation de la base de données clients-et-commandes.accdb
+1 - https://www.bonbache.fr/tables-de-base-de-donnees-access-exercice-debutant-403.html
+// importezez la base de données clients-et-commandes.accdb
+2 - https://www.bonbache.fr/exercice-access-sur-l-importation-selective-de-donnees-405.html
+
