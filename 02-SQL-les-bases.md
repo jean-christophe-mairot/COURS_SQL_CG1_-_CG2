@@ -140,6 +140,7 @@ Voici un ensemble de tables représentant une base de données pour une entrepri
 
 ### Questions
 questions de 1 à 10, avec des requêtes SQL à écrire pour chaque question.
+
 1. Afficher tous les employés du département "Informatique".
 2. Lister les projets ayant un budget supérieur à 10 000.   
 3. Afficher les employés embauchés après le 1er janvier 2020.
