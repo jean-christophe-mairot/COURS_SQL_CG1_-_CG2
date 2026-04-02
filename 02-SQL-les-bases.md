@@ -234,3 +234,19 @@ questions de 1 à 10, avec des requêtes SQL à écrire pour chaque question.
      FROM Projets
      WHERE Budget < 20000;
      ```
+
+
+
+**Cours jc mairot et exercices :
+https://github.com/jean-christophe-mairot/COURS_SQL_CG1_-_CG2/blob/main/02-SQL-les-bases.md
+
+**Références SQL :
+https://sql.sh/
+
+**Références ACCESS microsoft :
+https://support.microsoft.com/search/results?query=Access&isEnrichedQuery=false
+
+**Entrainement SQL en ligne
+https://sqlzoo.net/wiki/SELECT_basics
+
+
