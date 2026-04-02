@@ -249,4 +249,6 @@ https://support.microsoft.com/search/results?query=Access&isEnrichedQuery=false
 **Entrainement SQL en ligne
 https://sqlzoo.net/wiki/SELECT_basics
 
+**Exercice et cours excel :
+https://www.clic-formation.net/
 
