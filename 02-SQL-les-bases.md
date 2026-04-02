@@ -100,6 +100,22 @@ Cela retourne les employés du département "Informatique" ayant un salaire sup�
 
 ---
 
+## Exemple 7 : Filtrer les résultats agrégés avec HAVING
+
+La clause `HAVING` permet de filtrer les résultats après une agrégation (GROUP BY). Contrairement à `WHERE`, elle s'applique aux résultats groupés :
+
+```sql
+SELECT Departement, COUNT(*) as NombreEmployes
+FROM Employes
+GROUP BY Departement
+HAVING COUNT(*) > 2;
+```
+
+Cela retourne les départements ayant plus de 2 employés.
+
+---
+
+---
 ## Conclusion
 
 La commande `SELECT` est essentielle pour interroger une base de données. En combinant des clauses comme `WHERE`, `ORDER BY` et `LIMIT`, vous pouvez affiner vos requêtes pour extraire exactement les données dont vous avez besoin.
@@ -151,16 +167,6 @@ questions de 1 à 10, avec des requêtes SQL à écrire pour chaque question.
 8. Lister les projets dont le nom contient le mot "Réseau".
 9. Afficher les employés qui ne sont pas dans le département "RH".
 10. Lister les projets ayant un budget inférieur à 20 000.
-
-
-
-
-
-
-
-
-
-
 
 
 ### Requêtes SQL
