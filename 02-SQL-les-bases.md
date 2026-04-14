@@ -257,3 +257,6 @@ https://sqlzoo.net/wiki/SELECT_basics
 
 **trouver le meurtrier d'un crime avec SQL :
 https://mystery.knightlab.com/
+**Exercice et cours excel :
+https://www.clic-formation.net/
+
