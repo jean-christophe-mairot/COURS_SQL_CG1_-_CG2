@@ -49,6 +49,8 @@ Pour les jointures externes (`LEFT JOIN` ou `RIGHT JOIN`), la table "gauche" ou 
 - Dans un `LEFT JOIN`, toutes les lignes de la table à gauche sont incluses, même si aucune correspondance n'existe dans la table à droite.
 - Dans un `RIGHT JOIN`, toutes les lignes de la table à droite sont incluses, même si aucune correspondance n'existe dans la table à gauche.
 
+
+
 ### Visualisation
 
 Voici un schéma simplifié pour illustrer :

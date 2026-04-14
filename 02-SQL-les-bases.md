@@ -255,4 +255,5 @@ https://support.microsoft.com/search/results?query=Access&isEnrichedQuery=false
 **Entrainement SQL en ligne
 https://sqlzoo.net/wiki/SELECT_basics
 
-
+**trouver le meurtrier d'un crime avec SQL :
+https://mystery.knightlab.com/
