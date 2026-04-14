@@ -298,23 +298,25 @@ GROUP BY client_id;
 ```
 
 ### Exercice 5 : HAVING - Filtrer les groupes
-Afficher les catégories de produits contenant plus de 10 produits.
+Afficher les clients ayant dépensé plus de 500 € en total.
 ```sql
-SELECT categorie, COUNT(*) as nombre_produits 
-FROM produits 
-GROUP BY categorie 
-HAVING COUNT(*) > 10;
+SELECT client_id, SUM(montant) as total_depense 
+FROM commandes 
+GROUP BY client_id 
+HAVING SUM(montant) > 500;
 ```
 
 **Réponse :**
 ```
-┌──────────┬──────────────────┐
-│ categorie│ nombre_produits  │
-├──────────┼──────────────────┤
-│ (Aucun)  │ (Résultat vide)  │
-└──────────┴──────────────────┘
+┌───────────┬────────────────┐
+│ client_id │ total_depense  │
+├───────────┼────────────────┤
+│ 1         │ 1275           │
+│ 2         │ 650            │
+│ 3         │ 1200           │
+│ 5         │ 2000           │
+└───────────┴────────────────┘
 ```
-(Aucune catégorie n'a plus de 10 produits)
 
 ### Exercice 6 : ORDER BY
 Afficher les 5 clients ayant le plus dépensé, triés par montant décroissant.
@@ -340,22 +342,25 @@ LIMIT 5;
 ```
 
 ### Exercice 7 : LIMIT et OFFSET - Pagination
-Afficher les produits de la page 3 (10 produits par page).
+Afficher les produits de la page 2 (5 produits par page).
 ```sql
 SELECT * FROM produits 
 ORDER BY id 
-LIMIT 10 OFFSET 20;
+LIMIT 5 OFFSET 5;
 ```
 
 **Réponse :**
 ```
-┌────┬────────┬───────┬──────────────┐
-│ id │ nom    │ prix  │ categorie    │
-├────┼────────┼───────┼──────────────┤
-│    │        │       │              │
-└────┴────────┴───────┴──────────────┘
+┌────┬─────────────┬───────┬──────────────┐
+│ id │ nom         │ prix  │ categorie    │
+├────┼─────────────┼───────┼──────────────┤
+│ 6  │ Chaise      │ 45    │ Meuble       │
+│ 7  │ Table       │ 120   │ Meuble       │
+│ 8  │ Lampe       │ 30    │ Décoration   │
+│ 9  │ Miroir      │ 55    │ Décoration   │
+│ 10 │ Étagère     │ 80    │ Meuble       │
+└────┴─────────────┴───────┴──────────────┘
 ```
-(Résultat vide - La table n'a que 12 produits)
 
 ### Exercice 8 : DISTINCT
 Lister toutes les villes distinctes où les clients sont situés, compter leur nombre.
